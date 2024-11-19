@@ -1,0 +1,61 @@
+.mypage {
+  .post-wrapper {
+    background-color: #fff;
+    width: 393px;
+    min-height: 200px;
+    padding-block: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 70px;
+    border: 1px solid #183e6a;
+  }
+
+  .post-content {
+    color: #474a52;
+    padding-block: 8px;
+    padding: 16px;
+    padding-bottom: 26px;
+    font-family: "Pretendard";
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+    text-align: center;
+  }
+
+  .user {
+    font-family: "SEBANG Gothic";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 18.88px;
+    text-align: left;
+    color: #f1f4bc;
+    margin: 0;
+  }
+
+  .write-date {
+    font-family: "Pretendard";
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 17px;
+    letter-spacing: -0.5px;
+    text-align: center;
+    color: #d5e4f6;
+    margin: 0;
+  }
+
+  .post-info {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    padding: 8px 0px 20px 16px;
+  }
+
+  .hashtag-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 11px;
+    flex-wrap: wrap;
+    margin-left: 5px;
+  }
+}
