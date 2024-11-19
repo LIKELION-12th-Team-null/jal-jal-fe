@@ -71,17 +71,20 @@ function NickName() {
   };
 
   // css 배치 설정
+  // 페이지가 로드될 때 body 배치 설정
   useEffect(() => {
-    // 페이지가 로드될 때 body 배치 설정
-    document.body.style.justifyContent = "flex-start";
-    document.body.style.marginTop = "120px";
-    document.body.style.overflow = "hidden";
+    const appElement = document.querySelector(".App");
+    if (appElement) {
+      appElement.style.justifyContent = "flex-start";
+      appElement.style.paddingTop = "120px";
+      appElement.style.overflow = "hidden";
+    }
 
     // 컴포넌트가 unmount 될 때 배치 복원
     return () => {
-      document.body.style.justifyContent = ""; // 원래 배치로 복원
-      document.body.style.marginTop = "";
-      document.body.style.overflow = "";
+      if (appElement) {
+        appElement.style.background = ""; // 원래 배경으로 복원
+      }
     };
   }, []);
 

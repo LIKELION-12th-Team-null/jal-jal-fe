@@ -18,16 +18,21 @@ function Login() {
     window.location.href = kakaoLink;
   };
 
+  // 페이지가 로드될 때 body 배경 설정
   useEffect(() => {
-    // 페이지가 로드될 때 body 배경 설정
-    document.body.style.background = `linear-gradient(#183e6a, #4a5390, #7b4d83), url(${Vector})`;
-    document.body.style.backgroundRepeat = "no-repeat";
-    document.body.style.backgroundSize = "cover";
-    document.body.style.backgroundBlendMode = "overlay";
+    const appElement = document.querySelector(".App");
+    if (appElement) {
+      appElement.style.background = `linear-gradient(#183e6a, #4a5390, #7b4d83), url(${Vector})`;
+      appElement.style.backgroundRepeat = "no-repeat";
+      appElement.style.backgroundSize = "cover";
+      appElement.style.backgroundBlendMode = "overlay";
+    }
 
     // 컴포넌트가 unmount 될 때 배경 복원
     return () => {
-      document.body.style.background = ""; // 원래 배경으로 복원
+      if (appElement) {
+        appElement.style.background = ""; // 원래 배경으로 복원
+      }
     };
   }, []);
 
