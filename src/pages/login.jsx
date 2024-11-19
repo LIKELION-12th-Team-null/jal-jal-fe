@@ -6,15 +6,12 @@ import Vector from "./../assets/Vector.svg";
 import KakaoButton from "./../assets/kakao_login_button.png";
 import "./../styles/login.css";
 import { useEffect } from "react";
-import { REST_API_KEY, REDIRECT_URI } from "../config";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
-  // 카카오 로그인 정보
-  // 루트 디렉토리에 .env 파일로 관리 후 config파일에서 따로 관리하여 export
-  const kakaoLink = `https://kauth.kakao.com/oauth/authorize?client_id=${REST_API_KEY}&redirect_uri=${REDIRECT_URI}&response_type=code`;
-
+  // 카카오 로그인
   const loginHandler = () => {
-    window.location.href = kakaoLink;
+    window.location.replace("http://localhost:8080/oauth2/authorization/kakao");
   };
 
   // 페이지가 로드될 때 body 배경 설정
