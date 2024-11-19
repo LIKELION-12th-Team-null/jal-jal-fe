@@ -1,0 +1,24 @@
+.edit-modal {
+  position: absolute;
+  top: 50px;
+  right: 20px;
+  width: 150px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #2f7ad0;
+  border-radius: 10px 0px 10px 10px;
+}
+
+.text-container {
+  display: inline-flex;
+  gap: 10px;
+  font-size: 14px;
+  font-family: Pretendard;
+  font-weight: 400;
+}
+
+.button {
+  cursor: pointer;
+}
