@@ -1,0 +1,94 @@
+.login {
+  .title-wrapper {
+    position: relative;
+    left: -25px;
+    padding-top: 10px;
+    margin-top: 20px;
+
+    .title {
+      margin-block: 0;
+      font-size: 64px;
+      font-weight: 400;
+      font-family: "SEBANG Gothic OTF";
+    }
+    .top-white-flower {
+      position: absolute;
+      left: 120px;
+    }
+
+    .top-yellow-flower {
+      position: absolute;
+      right: -20px;
+      margin-top: 20px;
+      top: -60px;
+      padding-top: 20px;
+    }
+  }
+
+  .intro {
+    position: relative;
+    margin-top: 70px;
+    left: -25px;
+
+    .intro_1,
+    .intro_2 {
+      margin: 0;
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 28.32px;
+      font-family: "SEBANG Gothic OTF";
+    }
+
+    .middle-white-flower {
+      position: absolute;
+      width: 15px;
+      top: 2px;
+      left: 160px;
+    }
+  }
+
+  .login-img-wrapper {
+    position: relative;
+    top: -40px;
+    text-align: center;
+
+    .moon-and-rabbit {
+      text-align: center;
+      width: 260.36px;
+      height: 371px;
+    }
+
+    .middle-yellow-flower {
+      position: absolute;
+      top: 135px;
+      transform: rotate(-45deg);
+    }
+
+    .middle-blue-flower {
+      position: absolute;
+      width: 20px;
+      bottom: 40px;
+      transform: rotate(-30deg);
+    }
+
+    .bottom-blue-flower {
+      position: absolute;
+      bottom: 0;
+      left: -20px;
+    }
+  }
+
+  .KakaoButton {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    display: inline-flex;
+    width: 300px;
+    margin-bottom: 30px;
+
+    img {
+      width: 100%;
+      display: block;
+    }
+  }
+}

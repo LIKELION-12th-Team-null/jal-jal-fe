@@ -1,0 +1,15 @@
+.mypage {
+  display: flex;
+  flex-direction: column;
+}
+
+/* 마지막 요소를 제외한 요소들 사이에 구분선을 추가 */
+.mypage:not(:last-child)::after {
+  content: "";
+  width: 343px;
+  height: 1px;
+  background-color: rgba(213, 228, 246, 0.3);
+  display: block;
+  margin: 0 auto; /* 중앙 정렬 */
+  margin-bottom: 50px;
+}
