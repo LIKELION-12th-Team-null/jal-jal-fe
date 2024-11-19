@@ -31,12 +31,10 @@ function App() {
 }
 
 const ConditionalHeader = () => {
-  const ConditionalHeader = () => {
-    const location = useLocation();
-    const excludedPaths = ["/", "/nickname", "/callback/sign-up", "/callback/main"]; // 헤더를 숨길 경로 목록
+  const location = useLocation();
+  const excludedPaths = ["/", "/nickname", "/callback/sign-up", "/callback/main"]; // 헤더를 숨길 경로 목록
 
-    return !excludedPaths.includes(location.pathname) ? <Header /> : null;
-  };
+  return !excludedPaths.includes(location.pathname) ? <Header /> : null;
 };
 
 export default App;
