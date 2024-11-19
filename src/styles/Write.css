@@ -1,0 +1,66 @@
+.write-page {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.nickname-container {
+  width: 100%;
+  height: 60px;
+  font-family: "Pretendard";
+  font-size: 16px;
+  font-weight: 400;
+  color: #d7dfb4;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  padding: 15px;
+}
+
+.today {
+  font-size: 10px;
+  font-weight: 300;
+  color: white;
+}
+
+.edit-button {
+  position: absolute;
+  right: 15px;
+  cursor: pointer;
+}
+
+.write-content {
+  width: 100%;
+  height: 300px;
+  padding: 50px;
+  border: none;
+  resize: none;
+  outline: none;
+  font-size: 18px;
+  text-align: center;
+  font-family: "Pretendard";
+  font-weight: 500;
+  box-shadow: inset 0 0 1px 1px rgba(56, 56, 56, 0.5);
+  background-color: white;
+  color: #474a52;
+  overflow-y: auto;
+}
+
+.done-button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.done-button {
+  width: 200px;
+  height: 40px;
+  border-radius: 50px;
+  border: none;
+  font-size: 15px;
+  font-family: "Pretendard";
+  font-weight: 700;
+  background-color: #d5e4f6;
+  color: rgb(4, 29, 68);
+}
