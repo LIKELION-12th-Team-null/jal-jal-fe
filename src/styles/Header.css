@@ -1,0 +1,26 @@
+header {
+  width: 100%;
+  height: 68px;
+  padding: 15px;
+  position: relative;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: SebangGothic;
+  font-weight: 400;
+  background-color: none;
+  z-index: 1;
+}
+
+.service-name {
+  cursor: pointer;
+}
+
+.icons-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  cursor: pointer;
+}
