@@ -1,0 +1,53 @@
+.tag-container {
+  margin: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.text-tag-container {
+  position: relative;
+}
+
+.text-tag {
+  padding: 5px 10px;
+  border: 2px solid #d5e4f6;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #f9fafa;
+  font-size: 12px;
+  font-family: Pretendard;
+  font-weight: 400;
+}
+
+.delete-tag {
+  position: absolute;
+  top: -5px;
+  right: 2px;
+  border: none;
+  border-radius: 50%;
+  font-size: 10px;
+  font-family: Pretendard;
+  font-weight: 400;
+  background: #accaec;
+  color: white;
+  cursor: pointer;
+}
+
+.add-button {
+  width: 5px;
+  cursor: pointer;
+}
+
+.input-tag {
+  width: 130px;
+  outline: none;
+  color: #f9fafa;
+  background-color: transparent;
+}
+
+.input-tag::placeholder {
+  color: #b0c4de;
+}
