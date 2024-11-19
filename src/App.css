@@ -9,7 +9,4 @@
   min-height: 100vh;
   font-size: calc(10px + 2vmin);
   color: white;
-  /* 코드추가 부분 */
-  box-sizing: border-box;
-  background-attachment: fixed;
 }
