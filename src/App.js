@@ -20,8 +20,8 @@ function App() {
         <Route path="/" element={<Login />} />
         <Route path="/nickname" element={<Nickname />} />
         <Route path="/mypage" element={<Mypage />} />
-        <Route exact path="/callback/sign-up" element={<LoginRedirect />} />
-        <Route exact path="/callback/main" element={<MainRedirect />} />
+        <Route path="/callback/sign-up" element={<LoginRedirect />} />
+        <Route path="/callback/main" element={<MainRedirect />} />
         <Route path="/main" element={<Main />} />
         <Route path="/like" element={<Like />} />
         <Route path="/write" element={<Write />} />

@@ -13,14 +13,20 @@ function MainRedirect() {
   const accessToken = queryParams.get("token");
 
   useEffect(() => {
-    localStorage.setItem("accessToken", accessToken);
-    setAuth((prev) => ({
-      ...prev,
-      isLoggedIn: true,
-      accessToken: accessToken,
-    }));
-    navigate("/main");
-  }, [setAuth, navigate]);
+    if (accessToken) {
+      console.log(accessToken);
+      // Access token 저장 및 상태 업데이트
+      localStorage.setItem("accessToken", accessToken); // localStorage에 저장
+      setAuth((prev) => ({
+        ...prev,
+        isLoggedIn: true,
+        accessToken: accessToken, // Recoil 상태 업데이트
+      }));
+      navigate("/main");
+    } else {
+      console.error("Access token is missing.");
+    }
+  }, [accessToken, setAuth, navigate]); // 의존성 배열에 accessToken 추가
 
   return <div>로그인 중...</div>;
 }

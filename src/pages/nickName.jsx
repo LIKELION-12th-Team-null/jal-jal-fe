@@ -1,27 +1,29 @@
 import "./../styles/nickName.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { useRecoilValue, useSetRecoilState } from "recoil";
 import { authState } from "../atoms/authState";
 
 function NickName() {
   const auth = useRecoilValue(authState); // 현재 로그인 상태 조회
-  const setAuthState = useSetRecoilState(authState);
+  const setAuth = useSetRecoilState(authState);
   const [nickname, setNickname] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
 
   // 서버에서 닉네임을 가져오는 함수
   const fetchNickname = async () => {
     setLoading(true);
+    // Recoil 상태에서 토큰 가져오기, 없으면 localStorage에서 가져오기
+    const token = auth.accessToken || localStorage.getItem("accessToken");
+
     try {
-      console.log("토큰:", auth.accessToken); // 요청 전에 토큰을 출력하여 확인
-
       // axios를 사용하여 GET 요청
-      const response = await axios.get("", { headers: { Authorization: `Bearer ${auth.accessToken}` } }); // 토큰을 Authorization 헤더에 추가
+      const response = await axios.get("http://localhost:8080/api/members/nickname", { headers: { Authorization: `Bearer ${token}` } }); // 토큰을 Authorization 헤더에 추가
 
-      const receivedNickname = response.data.nickname;
+      const receivedNickname = response.data.result.nickname;
 
       if (response.status === 200) {
         setNickname(receivedNickname); // 서버에서 받은 닉네임을 상태에 저장
@@ -49,19 +51,18 @@ function NickName() {
       return;
     }
 
+    const token = auth.accessToken || localStorage.getItem("accessToken"); // Recoil 상태 우선, 없으면 localStorage 사용
+
     try {
       // 닉네임 POST 요청
-      const response = await axios.post("", { nickname }, { headers: { Authorization: `Bearer ${auth.accessToken}` } });
+      const response = await axios.post("http://localhost:8080/api/members", { nickname }, { headers: { Authorization: `Bearer ${token}` } });
 
       console.log("닉네임 저장 응답 데이터:", response.data); // 응답 데이터 확인
 
       if (response.status === 200) {
         alert("닉네임이 성공적으로 저장되었습니다.");
-        setAuthState((prev) => ({
-          ...prev,
-          userInfo: { nickname },
-        }));
-        navigate("/mypage"); //닉네임 저장 후 페이지 이동
+        // 닉네임 저장 후 다시 replace해서 토큰을 다시 받아오기
+        window.location.replace("http://localhost:8080/oauth2/authorization/kakao");
       } else {
         alert("닉네임 저장에 실패했습니다.");
       }
@@ -83,7 +84,9 @@ function NickName() {
     // 컴포넌트가 unmount 될 때 배치 복원
     return () => {
       if (appElement) {
-        appElement.style.background = ""; // 원래 배경으로 복원
+        appElement.style.justifyContent = "";
+        appElement.style.paddingTop = "";
+        appElement.style.overflow = ""; // 모든 스타일 복원
       }
     };
   }, []);

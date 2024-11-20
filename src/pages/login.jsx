@@ -27,7 +27,10 @@ function Login() {
     // 컴포넌트가 unmount 될 때 배경 복원
     return () => {
       if (appElement) {
-        appElement.style.background = ""; // 원래 배경으로 복원
+        appElement.style.background = "";
+        appElement.style.backgroundRepeat = "";
+        appElement.style.backgroundSize = "";
+        appElement.style.backgroundBlendMode = ""; // 모든 스타일 복원
       }
     };
   }, []);
