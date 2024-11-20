@@ -25,6 +25,7 @@ function LoginRedirect() {
       navigate("/nickname");
     } else {
       console.error("Access token is missing.");
+      navigate("/");
     }
   }, [accessToken, setAuth, navigate]); // 의존성 배열에 accessToken 추가
 
