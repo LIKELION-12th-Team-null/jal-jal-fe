@@ -15,3 +15,7 @@
   margin: 0 auto; /* 중앙 정렬 */
   margin-bottom: 50px;
 }
+
+.no_posts {
+  padding-block: 300px; /* header와 간격 조정 */
+}
