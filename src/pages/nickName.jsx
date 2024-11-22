@@ -21,17 +21,14 @@ function NickName() {
 
     try {
       // axios를 사용하여 GET 요청
-      const response = await axios.get("http://localhost:8080/api/members/nickname", { headers: { Authorization: `Bearer ${token}` } }); // 토큰을 Authorization 헤더에 추가
+      const response = await axios.get("http://localhost:8080/api/members/nickname", { headers: { Authorization: ` ${token}` } }); // 토큰을 Authorization 헤더에 추가
 
       const receivedNickname = response.data.result.nickname;
-
-      if (response.status === 200) {
-        setNickname(receivedNickname); // 서버에서 받은 닉네임을 상태에 저장
-      } else {
-        console.error("닉네임을 가져오는 데 실패했습니다.");
-      }
+      // 서버에서 받은 닉네임을 상태에 저장
+      setNickname(receivedNickname);
     } catch (error) {
       console.error("서버에 연결할 수 없습니다.", error);
+      alert("닉네임을 가져올 수 없습니다.");
     } finally {
       setLoading(false);
     }
@@ -55,19 +52,16 @@ function NickName() {
 
     try {
       // 닉네임 POST 요청
-      const response = await axios.post("http://localhost:8080/api/members", { nickname }, { headers: { Authorization: `Bearer ${token}` } });
+      const response = await axios.post("http://localhost:8080/api/members", { nickname }, { headers: { Authorization: `${token}` } });
 
       console.log("닉네임 저장 응답 데이터:", response.data); // 응답 데이터 확인
 
-      if (response.status === 200) {
-        alert("닉네임이 성공적으로 저장되었습니다.");
-        // 닉네임 저장 후 다시 replace해서 토큰을 다시 받아오기
-        window.location.replace("http://localhost:8080/oauth2/authorization/kakao");
-      } else {
-        alert("닉네임 저장에 실패했습니다.");
-      }
+      // 닉네임 저장 후 다시 replace해서 토큰을 다시 받아오기
+      alert("닉네임이 성공적으로 저장되었습니다.");
+      window.location.replace("http://localhost:8080/oauth2/authorization/kakao");
     } catch (error) {
       console.error("서버에 연결할 수 없습니다.", error);
+      alert("닉네임 저장에 실패했습니다.");
     }
   };
 
