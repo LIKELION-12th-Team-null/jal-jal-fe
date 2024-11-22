@@ -14,17 +14,9 @@ export default function Header() {
         잘잘
       </div>
       <div className="icons-container">
-        <img
-          src={SearchIcon}
-          alt="돋보기 아이콘"
-          onClick={() => navigate("/")}
-        />
-        <img src={MyPageIcon} alt="사람 아이콘" onClick={() => navigate("/")} />
-        <img
-          src={HeartIcon}
-          alt="하트 아이콘"
-          onClick={() => navigate("/like")}
-        />
+        <img src={SearchIcon} alt="돋보기 아이콘" onClick={() => navigate("/")} />
+        <img src={MyPageIcon} alt="사람 아이콘" onClick={() => navigate("/mypage")} />
+        <img src={HeartIcon} alt="하트 아이콘" onClick={() => navigate("/like")} />
       </div>
     </header>
   );

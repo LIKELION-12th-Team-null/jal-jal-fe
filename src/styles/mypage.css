@@ -1,6 +1,8 @@
 .mypage {
   display: flex;
   flex-direction: column;
+  font-family: "Pretendard";
+  font-weight: 400;
 }
 
 /* 마지막 요소를 제외한 요소들 사이에 구분선을 추가 */
@@ -12,4 +14,8 @@
   display: block;
   margin: 0 auto; /* 중앙 정렬 */
   margin-bottom: 50px;
+}
+
+.no_posts {
+  padding-block: 300px; /* header와 간격 조정 */
 }

@@ -4,7 +4,7 @@
   align-items: flex-start; /* 자식 요소들이 왼쪽 정렬되도록 설정 */
 
   .title {
-    font-family: "SEBANG Gothic OTF";
+    font-family: "SEBANGGothic";
     font-size: 24px;
     font-weight: 400;
     line-height: 28.32px;
@@ -15,7 +15,7 @@
 }
 
 .nickname-intro {
-  font-family: "SEBANG Gothic";
+  font-family: "SEBANGGothic";
   font-size: 16px;
   font-weight: 400;
   line-height: 18.88px;
@@ -25,7 +25,7 @@
 }
 
 .nickname-explain {
-  font-family: "SEBANG Gothic";
+  font-family: "SEBANGGothic";
   font-size: 10px;
   font-weight: 400;
   line-height: 11.8px;
