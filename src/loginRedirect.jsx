@@ -22,12 +22,13 @@ function LoginRedirect() {
         isLoggedIn: true,
         accessToken: accessToken, // Recoil 상태 업데이트
       }));
-      navigate("/nickname");
+      console.log(localStorage.getItem("accesstoken"));
+      setTimeout(() => navigate("/nickname"), 0); // navigate 지연
     } else {
       console.error("Access token is missing.");
       navigate("/");
     }
-  }, [accessToken, setAuth, navigate]); // 의존성 배열에 accessToken 추가
+  }, [setAuth, navigate]); // 의존성 배열에 accessToken 추가
 
   return <div>로그인 중...</div>;
 }
