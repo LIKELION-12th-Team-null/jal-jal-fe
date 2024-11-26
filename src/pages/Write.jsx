@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import "../styles/Write.css";
 import EditIcon from "../assets/edit.png";
 import InputTag from "../components/InputTag";
@@ -9,13 +9,44 @@ import { useRecoilValue } from "recoil";
 import { authState } from "../atoms/authState";
 
 export default function Write() {
+  const navigate = useNavigate();
+  const location = useLocation();
   const auth = useRecoilValue(authState);
   const token = auth?.accessToken;
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [content, setContent] = useState("");
   const [tags, setTags] = useState([]);
   const contentRef = useRef(null); // contentEditable 요소에 접근할 ref
-  const navigate = useNavigate();
+  const postId = location.state?.postId || null;
+
+  useEffect(() => {
+    const fetchPost = async () => {
+      if (!postId) return;
+
+      const url = `http://localhost:8080/api/posts/${postId}`;
+
+      try {
+        const response = await axios.get(url, {
+          params: { nickname: "한가로운 거위" },
+        });
+
+        const data = response.data;
+
+        setContent(data.content || "");
+        setTags(data.hashtagNames || []);
+      } catch (error) {
+        console.error("글 불러오기 실패:", error);
+      }
+    };
+
+    fetchPost();
+  }, [postId, token]);
+
+  useEffect(() => {
+    if (contentRef.current) {
+      contentRef.current.textContent = content;
+    }
+  }, [content]);
 
   const Data = {
     name: "한가로운 거위" /*닉네임 받아오기*/,
@@ -26,10 +57,12 @@ export default function Write() {
   };
 
   const handleDoneButtonClick = async () => {
-    const url = "http://localhost:8080/api/posts";
+    const url = postId
+      ? `http://localhost:8080/api/posts/${postId}`
+      : "http://localhost:8080/api/posts";
 
     const params = {
-      content: content,
+      content,
       socialId: 2 /*Id 받아오기*/,
       hashtags: tags,
     };
@@ -40,19 +73,20 @@ export default function Write() {
     };
 
     try {
-      const response = await axios.post(url, { params }, { headers });
-      console.log(response.data);
+      if (postId) {
+        const response = await axios.put(url, {
+          params: { nickname: "한가로운 거위" },
+        });
+        console.log("수정 성공:", response.data);
+      } else {
+        const response = await axios.post(url, params, { headers });
+        console.log("작성 성공:", response.data);
+      }
       navigate("/main");
     } catch (error) {
-      console.error(error);
+      console.error("글쓰기 요청 실패:", error);
     }
   };
-
-  useEffect(() => {
-    if (contentRef.current) {
-      contentRef.current.textContent = content;
-    }
-  }, [content]);
 
   const Today = new Date();
   const formattedDate = `${Today.getFullYear()}.${String(
