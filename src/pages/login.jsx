@@ -22,6 +22,7 @@ function Login() {
       appElement.style.backgroundRepeat = "no-repeat";
       appElement.style.backgroundSize = "cover";
       appElement.style.backgroundBlendMode = "overlay";
+      appElement.style.justifyContent = "center";
     }
 
     // 컴포넌트가 unmount 될 때 배경 복원
@@ -31,6 +32,7 @@ function Login() {
         appElement.style.backgroundRepeat = "";
         appElement.style.backgroundSize = "";
         appElement.style.backgroundBlendMode = ""; // 모든 스타일 복원
+        appElement.style.justifyContent = "";
       }
     };
   }, []);
