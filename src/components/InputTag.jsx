@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import "../styles/InputTag.css";
 
-function InputTag() {
-  const [tags, setTags] = useState([]);
+function InputTag({ tags, setTags }) {
   const [inputValue, setInputValue] = useState("");
 
   const handleAddTag = () => {
@@ -38,8 +37,8 @@ function InputTag() {
           onKeyDown={handleKeyDown}
         />
         {tags.map((tag, index) => (
-          <div className="text-tag-container">
-            <div className="text-tag" key={index}>
+          <div className="text-tag-container" key={index}>
+            <div className="text-tag">
               <span>#{tag}</span>
             </div>
             <button className="delete-tag" onClick={() => handleRemoveTag(tag)}>
