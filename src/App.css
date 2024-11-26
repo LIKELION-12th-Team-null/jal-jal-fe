@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   width: 393px;
   margin: auto;
   background: linear-gradient(349.84deg, #2f7ad0 2.29%, #183e6a 100.65%);

@@ -1,0 +1,98 @@
+.main-container {
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.8s ease-in-out;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+}
+
+.head {
+  display: flex;
+  flex-direction: row;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  align-items: center;
+  width: 95%;
+  margin-bottom: 5%;
+  font-family: SEBANG Gothic;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 18.88px;
+  color: white;
+  margin-top: 5%;
+  margin-left: 3%;
+}
+
+.date {
+  text-align: center;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  font-family: Pretendard;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 17px;
+  letter-spacing: -0.5px;
+  margin-left: 3%;
+  margin-bottom: 3.5%;
+  color: var(--primary-blue-000, rgba(213, 228, 246, 1));
+}
+
+.white {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 200px;
+  width: 100%;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 30px;
+  font-family: Pretendard Variable;
+  background-color: white;
+  color: var(--greyscale-700, rgba(71, 74, 82, 1));
+}
+
+.hashtags {
+  position: absolute;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  bottom: 16px;
+  gap: 11px;
+  width: calc(100% - 32px);
+}
+
+.hashtag {
+  padding: 8px;
+  gap: 10px;
+  font-family: Pretendard Variable;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14.32px;
+  border-radius: 30px;
+  color: var(--greyscale-500, rgba(159, 161, 168, 1));
+  border: 2px solid var(--primary-blue-400, rgba(130, 175, 227, 1));
+  background: white;
+}
+
+.like {
+  display: flex;
+  margin: 3.5% 3% 0 auto;
+  cursor: pointer;
+}
