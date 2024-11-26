@@ -1,13 +1,16 @@
 .edit-modal {
   position: absolute;
-  top: 50px;
-  right: 20px;
+  z-index: 10;
+  top: 25px;
+  right: 10px;
   width: 150px;
   height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: #2f7ad0;
+  padding: 8px;
+  gap: 4px;
   border-radius: 10px 0px 10px 10px;
 }
 

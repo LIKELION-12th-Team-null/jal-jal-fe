@@ -1,0 +1,132 @@
+.main-containerM {
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.page-wrapperM {
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.8s ease-in-out;
+}
+
+.pageM {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5%;
+  height: 100vh;
+  width: 100%;
+}
+
+.headM {
+  display: flex;
+  flex-direction: row;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  align-items: center;
+  width: 95%;
+  margin-bottom: 3%;
+  font-family: SEBANG Gothic;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 18.88px;
+  color: var(--Starr_yellow, rgba(241, 244, 188, 1));
+}
+
+.dateM {
+  text-align: center;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  font-family: Pretendard;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 17px;
+  letter-spacing: -0.5px;
+  margin-left: 3%;
+  color: var(--primary-blue-000, rgba(213, 228, 246, 1));
+}
+
+.dot-containerM {
+  position: relative;
+  margin-left: auto;
+  cursor: pointer;
+}
+
+.options-boxM {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  z-index: 10;
+  top: 30px;
+  right: 0;
+  border-radius: 10px 0px 10px 10px;
+  padding: 8px;
+  gap: 4px;
+  background: var(--primary-blue-800, rgba(47, 122, 208, 1));
+}
+
+.optionM {
+  white-space: nowrap;
+  background: none;
+  border: none;
+  font-family: Pretendard;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 1);
+}
+
+.optionM:not(:last-child) {
+  border-right: 1px solid white;
+}
+
+.optionM:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.whiteM {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 528px;
+  width: 100%;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 30px;
+  font-family: Pretendard Variable;
+  background-color: white;
+  color: var(--greyscale-700, rgba(71, 74, 82, 1));
+}
+
+.hashtagsM {
+  position: absolute;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  bottom: 16px;
+  gap: 11px;
+  width: calc(100% - 32px);
+}
+
+.hashtagM {
+  padding: 8px;
+  gap: 10px;
+  font-family: Pretendard Variable;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14.32px;
+  border-radius: 30px;
+  color: var(--greyscale-500, rgba(159, 161, 168, 1));
+  border: 2px solid var(--primary-blue-400, rgba(130, 175, 227, 1));
+  background: white;
+}
+
+.likeM {
+  display: flex;
+  margin: 3.5% 3% 0 auto;
+  cursor: pointer;
+}

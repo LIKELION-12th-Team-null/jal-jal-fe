@@ -25,6 +25,7 @@ export default function Write() {
         {Data.name}(나의 글)<span className="today">{formattedDate}</span>
         <div className="edit-button" onClick={handleEditButtonClick}>
           <img src={EditIcon} alt="..." />
+          {isModalOpen && <EditModal />}
         </div>
       </div>
       <div class="write-content" contenteditable="true"></div>
@@ -32,7 +33,6 @@ export default function Write() {
       <div className="done-button-container">
         <button className="done-button">다 작성했어요</button>
       </div>
-      {isModalOpen && <EditModal />}
     </div>
   );
 }
