@@ -15,7 +15,16 @@ function Main() {
 
   const fetchPosts = async () => {
     try {
-      const response = await axios.get("/api/posts");
+      const token = localStorage.getItem("accessToken");
+      if (!token) {
+        console.error("No access token found");
+        return;
+      }
+      const response = await axios.get("/api/posts", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
       if (response.data.status === "SUCCESS") {
         setPosts(response.data.data);
       }
