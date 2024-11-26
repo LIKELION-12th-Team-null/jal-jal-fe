@@ -86,6 +86,12 @@ export default function Write() {
     Today.getMonth() + 1
   ).padStart(2, "0")}.${String(Today.getDate()).padStart(2, "0")}`;
 
+  useEffect(() => {
+    if (contentRef.current && contentRef.current.textContent !== content) {
+      contentRef.current.textContent = content;
+    }
+  }, [content]);
+
   return (
     <div className="write-page">
       <div className="nickname-container">
