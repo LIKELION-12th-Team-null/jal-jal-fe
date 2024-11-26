@@ -1,7 +1,7 @@
 import "./../styles/nickName.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useRecoilValue, useSetRecoilState } from "recoil";
 import { authState } from "../atoms/authState";
 
@@ -11,7 +11,6 @@ function NickName() {
   const [nickname, setNickname] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
-  const location = useLocation();
 
   // 서버에서 닉네임을 가져오는 함수
   const fetchNickname = async () => {
@@ -21,7 +20,7 @@ function NickName() {
 
     try {
       // axios를 사용하여 GET 요청
-      const response = await axios.get("http://localhost:8080/api/members/nickname", { headers: { Authorization: ` ${token}` } }); // 토큰을 Authorization 헤더에 추가
+      const response = await axios.get("http://localhost:8080/api/members/nickname", { headers: { Authorization: `${token}` } }); // 토큰을 Authorization 헤더에 추가
 
       const receivedNickname = response.data.result.nickname;
       // 서버에서 받은 닉네임을 상태에 저장
