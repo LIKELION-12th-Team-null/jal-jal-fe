@@ -42,12 +42,6 @@ export default function Write() {
     fetchPost();
   }, [postId, token]);
 
-  useEffect(() => {
-    if (contentRef.current) {
-      contentRef.current.textContent = content;
-    }
-  }, [content]);
-
   const Data = {
     name: "한가로운 거위" /*닉네임 받아오기*/,
   };
@@ -63,7 +57,6 @@ export default function Write() {
 
     const params = {
       content,
-      socialId: 2 /*Id 받아오기*/,
       hashtags: tags,
     };
 
@@ -114,7 +107,9 @@ export default function Write() {
         dir="ltr"
         ref={contentRef} // contentEditable 요소에 접근할 ref
         onInput={(e) => setContent(e.target.textContent)}
-      ></div>
+      >
+        {postId ? content : ""}
+      </div>
       <InputTag tags={tags} setTags={setTags} />
       <div className="done-button-container">
         <button className="done-button" onClick={handleDoneButtonClick}>
